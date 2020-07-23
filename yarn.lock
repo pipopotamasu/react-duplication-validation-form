@@ -1128,6 +1128,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@hookform/resolvers@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-0.0.6.tgz#f3e1d3a53861e82d5405ae08dd1879fba9ac9706"
+  integrity sha512-20ebJH7iHoGFxgQZkSepe3cx9UXMOwp8WHjyq2VbvPx+GfNktuCCH4g9WO/KQ0RZCGYHgTdbHZERfCfNNp5aow==
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
