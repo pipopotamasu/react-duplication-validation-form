@@ -3,22 +3,22 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from "yup";
 
-function validateDuplicationEmail(this: any, email: string) {
+function validateDuplicationEmail(email: string) {
+  // @ts-ignore
   const { users } = this.from[1].value as { users: User[] };
   if (users.length < 2) return true;
 
-  let valid = true;
   let dupCount = 0;
   for (let i = 0; i < users.length; i += 1) {
     if (users[i].email === email) {
       dupCount += 1;
       if (dupCount > 1) {
-        valid = false;
-        break;
+        return false;
       }
     }
   }
-  return valid;
+
+  return true;
 }
 
 const schema = yup.object().shape({
@@ -50,8 +50,6 @@ function App() {
     defaultValues: { users: [{ name: '', email: '' }] },
     resolver: yupResolver(schema),
   });
-
-  console.log(errors)
 
   const { fields, append, remove } = useFieldArray<User>({
     control,
